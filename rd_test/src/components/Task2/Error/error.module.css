@@ -1,0 +1,5 @@
+.errorCenter {
+    display: flex;
+    align-items: center;
+    color: red;
+}

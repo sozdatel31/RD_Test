@@ -1,0 +1,29 @@
+
+.TextWrapper {
+  padding: 20px;
+  margin: 0 auto;
+  counter-reset: paragraph;
+  text-align: justify;
+  max-width: 1200px;
+  column-count: 2;
+  column-gap: 70px;
+  column-rule:  1px solid black;
+}
+
+.TextWrapper .RedLine:before {
+  counter-increment: none;
+  content: '';
+}
+
+.TextWrapper p:before {
+  counter-increment: paragraph;
+  content: counter(paragraph) ". ";
+}
+
+.TextWrapper p:first-child {
+  margin: 0;
+}
+
+.RedLine {
+  text-indent: 30px;
+}
