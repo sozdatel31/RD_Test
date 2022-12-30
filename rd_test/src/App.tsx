@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Task1 from './components/Task1/Task1';
 import Task2 from './components/Task2/Task2';
+import Task3 from './components/Task3/Task3';
 
 type TaskStateType = 'task1' | 'task2' | 'task3'
 
@@ -22,6 +23,7 @@ function App() {
       </header>
       {page === 'task1' && <Task1 />}
       {page === 'task2' && <Task2 />}
+      {page === 'task3' && <Task3 />}
     </div>
   );
 }

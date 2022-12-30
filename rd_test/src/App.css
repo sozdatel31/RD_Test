@@ -2,6 +2,9 @@
 .App {
   background-color: rgba(224, 223, 223, 0.21);
   height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .App-header {

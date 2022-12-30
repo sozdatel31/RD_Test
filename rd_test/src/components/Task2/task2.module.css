@@ -34,8 +34,11 @@
 
 .input {
     height: 30px;
+    outline: none;
 }
-
+.errorInput {
+    border: 1px solid red;
+}
 .button {
     padding: 8px 16px;
     background-color: #4a65df;

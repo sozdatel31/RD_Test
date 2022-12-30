@@ -3,6 +3,7 @@ import styles from './task2.module.css';
 import { useInput } from '../../customHook/useValidation';
 import { ErrorValidation } from './Error/Error';
 import { error } from '../../constants/error';
+import classNames from 'classnames';
 
 function Task2() {
 
@@ -12,10 +13,17 @@ function Task2() {
 
   const handleSubmit = (event: SyntheticEvent) => {
     event.preventDefault();
-    return email.inputValid && password.inputValid
+    return  email.inputValid && password.inputValid
       ? alert('вход успешно выполнен')
       : null;
   };
+
+  const inputClassesEmail = classNames(styles.input, {
+    [styles.errorInput]: checkValidate.onSubmit && (email.isEmpty || email.emailError)
+  })
+  const inputClassesPassword = classNames(styles.input, {
+    [styles.errorInput]: checkValidate.onSubmit && (password.isEmpty || password.minLengthError)
+  })
 
   return (
 
@@ -28,7 +36,7 @@ function Task2() {
         <div className={styles.inputBox}>
           <span>E-Mail:</span>
           <input
-            className={styles.input}
+            className={inputClassesEmail}
             type='text'
             placeholder='Enter your e-Mail'
             value={email.value}
@@ -46,7 +54,7 @@ function Task2() {
         <div className={styles.inputBox}>
           <span>Password:</span>
           <input
-            className={styles.input}
+            className={inputClassesPassword}
             type='password'
             value={password.value}
             placeholder='Password'
